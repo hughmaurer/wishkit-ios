@@ -24,6 +24,7 @@ extension View {
 
 enum LocalWishState: Hashable, Identifiable {
     case all
+    case approved
     case library(WishState)
 
     var id: String { description }
@@ -31,7 +32,9 @@ enum LocalWishState: Hashable, Identifiable {
     var description: String {
         switch self {
         case .all:
-            return "All"
+            return "all".localized()
+        case .approved:
+            return "approved".localized()
         case .library(let wishState):
             return wishState.description
         }
@@ -48,7 +51,7 @@ struct WishlistViewIOS: View {
     private var colorScheme
 
     @State
-    private var selectedWishState: LocalWishState = .all
+    private var selectedWishState: LocalWishState = .approved
 
     @ObservedObject
     var wishModel: WishModel
@@ -88,11 +91,7 @@ struct WishlistViewIOS: View {
 
     private var feedbackStateSelection: [LocalWishState] {
         return [
-            .all,
-            .library(.pending),
-            .library(.inReview),
-            .library(.planned),
-            .library(.inProgress),
+            .approved,
             .library(.completed),
         ]
     }
@@ -101,6 +100,8 @@ struct WishlistViewIOS: View {
         switch selectedWishState {
         case .all:
             return wishModel.all
+        case .approved:
+            return wishModel.approved
         case .library(let state):
             switch state {
             case .pending:
@@ -123,6 +124,8 @@ struct WishlistViewIOS: View {
         switch state {
         case .all:
             return wishModel.all.count
+        case .approved:
+            return wishModel.approved.count
         case .library(let wishState):
             switch wishState {
             case .pending:
@@ -165,6 +168,7 @@ struct WishlistViewIOS: View {
                                     .tag(state)
                             }
                         }
+                        .pickerStyle(.segmented)
                     }
 
                     Spacer(minLength: 15)
@@ -186,7 +190,7 @@ struct WishlistViewIOS: View {
             }
             .refreshableCompat(action: { await wishModel.fetchList() })
             .padding([.leading, .bottom, .trailing])
-
+            .clipped()
 
             if WishKit.config.buttons.addButton.location == .floating {
                 HStack {

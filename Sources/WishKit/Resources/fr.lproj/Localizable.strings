@@ -1,0 +1,51 @@
+"requested" = "Demandé";
+"pending" = "En attente";
+"approved" = "Accepté";
+"implemented" = "Implémenté";
+"inReview" = "En révision";
+"planned" = "Prévu";
+"inProgress" = "En cours";
+"completed" = "Complété";
+"wishlist" = "Suggestions de fonctionnalités";
+"save" = "Enregistrer";
+"title" = "Titre";
+"description" = "Description";
+"upvote" = "Vote positif";
+"info" = "Infos";
+"youCanOnlyVoteOnce" = "Vous ne pouvez voter qu'une seule fois.";
+"youCanNotVoteForAnImplementedWish" = "Vous ne pouvez pas voter pour une fonctionnalité déjà réalisée.";
+"youCanNotVoteForYourOwnWish" = "Vous ne pouvez pas voter pour votre propre suggestion.";
+"poweredBy" = "Propulsé par";
+"successfullyCreated" = "Créé avec succès";
+"done" = "Terminé";
+"detail" = "Détail";
+"featureWishlist" = "Suggestions de fonctionnalités";
+"confirm" = "Confirmer";
+"cancel" = "Annuler";
+"ok" = "OK";
+"titleOfWish" = "Titre de la fonctionnalité...";
+"titleDescriptionCannotBeEmpty" = "Le titre/la description ne peut pas être vide.";
+"votes" = "Votes";
+"close" = "Fermer";
+"createWish" = "Créer une fonctionnalité";
+"optional" = "optionnel";
+"required" = "obligatoire";
+"emailRequiredText" = "Veuillez entrer votre adresse e-mail.";
+"emailFormatWrongText" = "Format d'e-mail incorrect.";
+"comments" = "Commentaires";
+"writeAComment" = "Écrire un commentaire...";
+"admin" = "Admin";
+"user" = "Utilisateur";
+"noFeatureRequests" = "Aucune suggestion de fonctionnalité pour le moment ✨";
+"emailOptional" = "E-mail (optionnel)";
+"emailRequired" = "E-mail (obligatoire)";
+"discardEnteredInformation" = "Ignorer les informations saisies ?";
+"addButtonInNavigationBar" = "Créer";
+"refresh" = "Rafraîchir";
+"refreshing" = "Rafraîchissement...";
+
+// Toolbar
+"Done" = "Terminé";
+
+// Wishlist
+"All" = "Tout";

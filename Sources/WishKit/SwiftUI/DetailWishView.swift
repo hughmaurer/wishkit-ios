@@ -88,12 +88,15 @@ struct DetailWishView: View {
                             .frame(maxWidth: 700)
                     }
                 }.padding([.leading, .bottom, .trailing])
-            }.ignoresSafeArea(edges: [.bottom, .leading, .trailing])
+            }
+            .ignoresSafeArea(edges: [.bottom, .leading, .trailing])
+            .clipped()
 
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(backgroundColor)
+        .ignoresSafeArea(edges: [.leading, .bottom, .trailing])
     }
 
     private func showCloseButton() -> Bool {

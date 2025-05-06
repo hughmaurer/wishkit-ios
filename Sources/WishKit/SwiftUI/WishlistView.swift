@@ -31,6 +31,8 @@ struct WishlistView: View {
         switch selectedWishState {
         case .all:
             return wishModel.all
+        case .inProgress:
+            return wishModel.allInProgress
         case .library(let state):
             switch state {
             case .pending:

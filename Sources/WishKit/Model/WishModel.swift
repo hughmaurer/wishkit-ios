@@ -23,6 +23,9 @@ final class WishModel: ObservableObject {
 
     @Published
     var all: [WishResponse] = []
+    
+    @Published
+    var approved: [WishResponse] = []
 
     @Published
     var pendingList: [WishResponse] = []
@@ -93,6 +96,7 @@ final class WishModel: ObservableObject {
         self.completedList = sortedList.filter { wish in wish.state == .completed  || wish.state == .implemented}
 
         self.all = (self.pendingList + self.inReviewList + self.plannedList + self.inProgressList + self.completedList).sorted { $0.votingUsers.count > $1.votingUsers.count }
+        self.approved = (self.plannedList + self.inProgressList).sorted { $0.votingUsers.count > $1.votingUsers.count }
 
         self.implementedWishlist = sortedList
     }
